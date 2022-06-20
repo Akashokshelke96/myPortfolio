@@ -7,6 +7,9 @@
     box-sizing: border-box;
     text-decoration: none;
 }
+html {
+    scroll-behavior: smooth;
+}
 
 .max-width{
     max-width: 1300px;
@@ -19,19 +22,21 @@
      width: 100%;
      z-index: 9;
      padding:30px 0;
-     /*background: purple;*/
+     /*background: crimson;*/
      font-family: 'Ubuntu',sans-serif;
      transition: all 0.6s ease;
  }
 
  .navbar.sticky {
      padding:30px 0;
-     background: purple;
+     background: crimson;
  }
 
  .max-width .menu{
      justify-content: right;
  }
+
+
  .navbar .logo a{
      color: #fff;
      font-size: 35px;
@@ -42,13 +47,14 @@
      color: #fff;
  }
 .navbar .logo a span{
-color: purple;
+color: crimson;
 }
 .navbar .menu li {
     list-style: none;
     display: inline-block;
 }
 .navbar .menu li a {
+    display: block;
     color: #fff;
     font-size: 18px;
     font-weight: 500;
@@ -57,8 +63,9 @@ color: purple;
 
 }
 .navbar .menu li a:hover{
-    color: purple;
+    color: crimson;
 }
+
 
 .navbar.sticky .menu li a:hover{
     color: #fff;
@@ -78,6 +85,34 @@ color: purple;
     cursor: pointer;
     display: none;
 }
+
+
+
+.scroll-up-btn{
+    position: fixed;
+    height: 45px;
+    width: 42px;
+    background: crimson;
+    right: 30px;
+    bottom: 10px;
+    text-align: center;
+    line-height: 45px;
+    color: #fff;
+    z-index: 9999;
+    font-size: 30px;
+    border-radius: 6px;
+    cursor: pointer;
+    opacity: 0;
+    pointer-events: none;
+    transition: all 0.3s ease-in;
+   
+}
+.scroll-up-btn.show{
+    opacity: 1;
+    bottom: 30px;
+    pointer-events: auto;
+}
+
 
 
 /*HOME SECTION STYLING*/
@@ -108,7 +143,7 @@ color: purple;
     margin: 5px 0;
 }
 .home .home-content .text-3 span{
-    color: purple;
+    color: crimson;
     font-weight: bold;
     font-size: 35px;
 }
@@ -116,24 +151,33 @@ color: purple;
     color: #fff;
     display: inline-block;
     font-weight: bold;
-    background: purple;
+    background: crimson;
     padding: 12px 36px;
     margin-top: 20px;
-    border: 2px solid  purple;
+    border: 2px solid  crimson;
     border-radius: 8px;
     transition: 0.3s ease;
 }
 .home .home-content a:hover{
     color: #fff;
     background: none;
-    color: purple;
+    color: crimson;
 }
 /* all similar content styling code */
 section {
     padding: 100px 0;
 }
-.about .skills .projects{
+.about, .skills ,.projects, .contact{
     font-family: 'Poppins', sans-serif;
+
+}
+.about .about-content ,
+.skills .skills-content,
+.contact .contact-content{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
 }
 section .title{
     position: relative;
@@ -153,8 +197,7 @@ section .title::before{
     bottom: 0px;
     height: 3px;
     background: #111;
-    transform: translateX(-50%);
-    
+    transform: translateX(-50%);   
 }
 
 section .title::after{
@@ -163,7 +206,7 @@ section .title::after{
     bottom: -12px;
     padding: 5px;
     font-size: 20px;
-    color: purple;
+    color: crimson;
     background: #fff;
     transform: translateX(-50%);
 
@@ -206,7 +249,7 @@ section .title::after{
 .about .about-content .right span{
     font-weight: bold;
     font-size: 25px;
-    color: purple;
+    color: crimson;
 }
 .about .about-content .right p{
     text-align: justify;
@@ -215,16 +258,16 @@ section .title::after{
     color: #fff;
     display: inline-block;
     font-weight: bold;
-    background: purple;
+    background: crimson;
     font-weight: 500;
     padding: 6px 20px;
     margin-top: 20px;
-    border: 2px solid  purple;
+    border: 2px solid  crimson;
     border-radius: 8px;
     transition: all 0.3s ease;
 }
 .about .about-content .right a:hover{
-    color: purple;
+    color: crimson;
     background: none;
 }
 
@@ -270,8 +313,7 @@ color: black;
 }
 .skills .skills-content .box i{
     font-size: 30px;
-    color: violet;
-
+    color: crimson;
 }
 .skills .skills-content .box .text{
     font-size: 25px;
@@ -280,7 +322,6 @@ color: black;
 }
 
 /* Projects section Start */
-
 .projects .title::after{
     content: "what i did";
 }
@@ -311,21 +352,252 @@ color: black;
 .projects .carousel .card:hover{
     background-color: lavender;
     cursor: pointer;
-    border: 2px solid purple;
+    border: 2px solid crimson;
     transform: scale(1.05);
 }
 .projects .carousel .card:hover img{
-    border-color: darkgray ;
+     border-color: darkgray ; /* with crimson use white */
 }
 .projects .carousel .card img{
     height: 150px;
     width: 150px;
     object-fit: cover;
     border-radius: 50%;
-    border: 5px solid darkviolet;
+    border: 5px solid crimson;
     transition: all 0.3s ease;
 }
 
+/*Education section starts here*/
+.education {
+    background-color: #111;
+}
+.education .title{
+   color: #fff;
+}
+.education .title::before{
+   background-color: #fff;
+   
+}
+.education .title::after{
+    content:"qualified to";
+    background-color: #111;
+}
+.education .education-content .card{
+    text-align: center;
+    height: 30%;
+}
+
+.education .education-content .card i{
+  color: crimson;
+  margin-top: 20px;
+  font-size: 30px;
+    align-items: center;
+
+}
+.education .education-content .text{
+    font-size: 28px;
+    color: #fff;
+    background-color: #222;
+    width: 100%;
+    
+}
+.education .education-content .text p{
+    font-size: 20px;
+    margin-top: 10px;
+}
+.education .box .text .grade{
+    color: crimson;
+}
+
+.education .education-content .box:hover{
+    transition: all 0.3s ease;
+    transform: scale(1.08);
+}
+
+
+
+/* contact section starts here */
+.contact .title::before{
+    background-color: red;
+    }
+
+.contact {
+    color: #111;
+    background: #fff;
+}
+
+.contact .title::before{
+    background: black;
+}
+.contact .title::after{
+    color: crimson;
+    content: "ring me at";
+}
+
+.contact .contact-content .column{
+    width: calc(50% - 30px);
+}
+.contact .contact-content .right{
+    margin-top: 10px;
+    
+}
+.contact .contact-content .left p{
+    text-align: justify;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+.contact .contact-content .text{
+    font-size: 20px;
+}
+.contact .contact-content .left .icons{
+    margin: 10px 0;
+}
+.contact .contact-content .row{
+    display: flex;
+    height: 65px;
+    align-items: center;
+}
+.contact .contact-content .row .info{
+    margin-left: 30px;
+}
+.contact .contact-content i{
+    font-size: 25px;
+    color: crimson;
+}
+.contact .contact-content .info .head{
+    font-weight: 500;
+
+}
+.contact .contact-content .info .sub-title{
+    color: black;
+}
+.contact .right form .fields{
+    display: flex;
+
+    
+}
+
+.contact .right form .field,
+.contact .right form .fields .field{
+    height: 45px;
+    width: 100%;
+    margin-bottom: 15px;
+
+}
+.contact .right form .field .name{
+   margin-left: 10px;
+
+}
+.contact .right form .field .name:hover{
+    transform: scale(1.05) ;
+ }
+ .contact .right form .field .email{
+    margin-left: 10px;
+    
+ }
+.contact .right form .field .email:hover{
+    transform: scale(1.05);
+}
+
+ .contact .right form .field:hover .email{
+    margin-left: 10px;
+ }
+
+.contact .right form .textarea:hover textarea{
+  transform: scale(1.05);
+}
+.contact .right form .phone{
+    margin-left: 10px;
+}
+.contact .right form .phone:hover{
+    transform: scale(1.05);
+}
+.contact .right form .field input:hover,
+.contact .right form .textarea textarea:hover{
+  border-color: crimson;
+  
+}
+.contact .right form .field input,
+.contact .right form .textarea textarea{
+    height: 100%;
+    width: 100%;
+    border: 2px solid;
+    border-radius: 6px;
+    outline: none;
+    padding: 0 15px;
+    font-size: 17px;
+    font-family: 'Poppins',sans-serif;
+}
+.contact .right form .textarea textarea{
+    padding-top: 10px;
+    margin-left: 10px;
+
+    resize: none;
+}
+.contact .right form .textarea {
+    height: 80px;
+    width: 100%;
+}
+
+.contact .right form .name{
+    margin-right: 10px;
+}
+
+.contact .contact-content .right {
+    height: 400px;
+    
+    
+    }
+.contact .right .text{
+    margin-left: 10px;
+    margin-bottom: 20px;
+    font-size: 25px;
+
+
+}
+.contact .right form .button {
+    height: 47px;
+    width: 170px;
+    margin-left: 10px;
+}
+.contact .right form .button button{
+    width: 100%;
+    height: 100%;
+    background: crimson;
+    border: 2px solid crimson;
+    border-radius: 20px;
+    font-weight: 600;
+    color: #fff;
+    cursor: pointer;
+    transition:all 0.3s ease ;
+    
+}
+.contact .right form .button button:hover{
+    color: crimson;
+    background: none;
+    border: 2px solid crimson;
+    border-radius: 20px;
+    color: #111;
+}
+
+
+/*footer section styling */
+
+    footer{
+        background-color: #111;
+        padding: 20px 23px;
+        text-align: center;
+        margin-top: 40px;
+        color: #fff;
+    }
+    footer span a{
+        color: crimson;
+    }
+    footer span a:hover{
+        text-decoration: underline;
+        
+    }
+        
 
 
 
@@ -416,7 +688,9 @@ color: black;
     .about .about-content .right {
         flex: 100%;
     } 
-    .skills .skills-content .card{
+
+    .skills .skills-content .card,
+    .contact .contact-content .column{
         width:calc(80% - 10px);
         margin-bottom: 20px;
 
