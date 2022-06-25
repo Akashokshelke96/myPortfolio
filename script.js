@@ -19,9 +19,9 @@ $(document).ready(function(){
     var typed = new Typed(".typing",{
         strings: ["Web Designer","Freelancer","Frond-End Developer","Fitness Enthusiast","Java Developer"] ,
         typeSpeed: 100,
-        loop: true,
         backDelay: 900,
         backSpeed: 30,
+        loop: true,
     })
 
     var typed2 = new Typed(".typing2",{
